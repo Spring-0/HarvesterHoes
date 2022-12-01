@@ -1,0 +1,8 @@
+name: HarvesterHoes
+version: '${project.version}'
+main: me.spring.harvesterhoes.Harvesterhoes
+api-version: 1.19
+commands:
+  hh:
+    description: Give a hoe
+    usage: /<command>

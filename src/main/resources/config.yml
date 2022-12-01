@@ -1,0 +1,51 @@
+prefix: ''
+
+upgrade-menu-size: 18
+upgrade-menu-title: "Harvester Hoe Upgrades!"
+
+hoe-name: '&d&l *** &aHarvester Hoe &d&l***'
+hoe-tool-enchant-effect: TRUE
+hoe-lore:
+  - 'Collect sugar cane'
+  - 'Like a demon!'
+  - ''
+  - 'Haste: %HASTE_LEVEL%'
+  - 'Fortune: %FORTUNE_LEVEL%'
+  - 'Token Finder: %TOKEN_LEVEL%'
+  - 'Key Finder: %KEYFINDER_LEVEL%'
+  - ''
+  - 'Plugin by Spring93'
+
+
+# valid options for enchant-type (case-insensitive)
+#  - "haste"
+#  - "fortune"
+#  - "token-finder"
+#  - "key-finder"
+
+hoe-upgrade-menu:
+  1:
+    item: "DIAMOND_PICKAXE"
+    enchant-type: "haste"
+    name: "Haste Upgrade"
+    slot: 5
+    glow-effect: TRUE
+    lore:
+      - 'Click here to upgrade your Haste upgrade'
+      - ''
+      - 'Cost: (not developed yet)'
+      - ''
+      - 'Plugin by Spring93'
+
+  2:
+    item: "COBBLESTONE"
+    enchant-type: "fortune"
+    name: "Fortune Upgrade"
+    slot: 6
+    glow-effect: FALSE
+    lore:
+      - 'Click here to upgrade your Fortune upgrade'
+      - ''
+      - 'Cost: (not developed yet)'
+      - ''
+      - 'Plugin by Spring93'
