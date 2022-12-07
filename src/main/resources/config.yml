@@ -1,13 +1,11 @@
 prefix: ''
-
+cane-sell-price: 10
 upgrade-menu-size: 18
 upgrade-menu-title: "Harvester Hoe Upgrades!"
-
 hoe-name: '&d&l *** &aHarvester Hoe &d&l***'
 hoe-tool-enchant-effect: TRUE
 hoe-lore:
-  - 'Collect sugar cane'
-  - 'Like a demon!'
+  - 'Collect sugar cane like a GV'
   - ''
   - 'Haste: %HASTE_LEVEL%'
   - 'Fortune: %FORTUNE_LEVEL%'

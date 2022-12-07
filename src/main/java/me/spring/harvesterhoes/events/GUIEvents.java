@@ -29,6 +29,7 @@ public class GUIEvents implements Listener {
 
     @EventHandler
     public void onRightClick(PlayerInteractEvent e){
+        if(e.getPlayer().isSneaking()){return;}
         if(e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
             if (e.getPlayer().getInventory().getItemInHand() == null || e.getPlayer().getInventory().getItemInHand().getType() == Material.AIR) {return;}
             NBTItem nbti = new NBTItem(e.getPlayer().getInventory().getItemInHand());

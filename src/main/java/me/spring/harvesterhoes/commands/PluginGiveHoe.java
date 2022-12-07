@@ -3,6 +3,8 @@ package me.spring.harvesterhoes.commands;
 import me.spring.harvesterhoes.Harvesterhoes;
 import me.spring.harvesterhoes.Util;
 import de.tr7zw.nbtapi.NBTItem;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -38,7 +40,6 @@ public class PluginGiveHoe implements CommandExecutor {
             ItemStack hoe = new ItemStack(Material.WOOD_HOE, 1);
             ItemMeta meta = hoe.getItemMeta();
 
-            Bukkit.broadcastMessage(plugin.getConfig().getString("hoe-name"));
             meta.setDisplayName(Util.msgColorCode(plugin.getConfig().getString("hoe-name")));
 
             for(String s: plugin.getConfig().getStringList("hoe-lore")){
@@ -62,13 +63,16 @@ public class PluginGiveHoe implements CommandExecutor {
             meta.setLore(lores);
             hoe.setItemMeta(meta);
 
+
+
+
             NBTItem nbti = new NBTItem(hoe);
             nbti.setInteger("HASTE_LEVEL", 0);
             nbti.setInteger("FORTUNE_LEVEL", 0);
             nbti.setInteger("TOKEN_LEVEL", 0);
             nbti.setInteger("KEYFINDER_LEVEL", 0);
             nbti.setBoolean("isHarvHoe", Boolean.TRUE);
-            nbti.setBoolean("autoSell", Boolean.TRUE);
+            nbti.setBoolean("autoSell", Boolean.FALSE);
 
             if (args.length == 0) {pSender.getInventory().addItem(new ItemStack[]{nbti.getItem()});
             } else if (args.length == 1) {

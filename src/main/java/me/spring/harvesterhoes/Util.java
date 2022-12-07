@@ -16,7 +16,7 @@ public class Util {
         Method used to output message to console
      */
     public static void tellConsole(String msg){
-        final String PREFIX = ChatColor.DARK_PURPLE + "[SpringHoes] ";
+        final String PREFIX = ChatColor.DARK_PURPLE + "[Spring] ";
         Bukkit.getServer().getConsoleSender().sendMessage(PREFIX + msg);
     }
 

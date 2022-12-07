@@ -2,6 +2,9 @@ name: HarvesterHoes
 version: '${project.version}'
 main: me.spring.harvesterhoes.Harvesterhoes
 api-version: 1.19
+depend:
+  - "NBTAPI"
+  - "Vault"
 commands:
   hh:
     description: Give a hoe
