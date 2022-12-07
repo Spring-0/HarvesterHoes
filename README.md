@@ -13,5 +13,5 @@ In development project that features upgradable Sugar Cane harvester hoes.
 
 ## Authors
 
-Spring93
+Spring93<br>
 Discord: Spring#9999
