@@ -7,6 +7,7 @@ import me.spring.harvesterhoes.events.CaneBreakEvent;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffectType;
 
 public final class Harvesterhoes extends JavaPlugin {
     private static Economy econ = null;

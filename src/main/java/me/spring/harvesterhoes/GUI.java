@@ -61,6 +61,7 @@ public class GUI {
                 s = s.replaceAll("%FORTUNE_LEVEL%", String.valueOf(nbti.getInteger("FORTUNE_LEVEL")));
                 s = s.replaceAll("%TOKEN_LEVEL%", String.valueOf(nbti.getInteger("TOKEN_LEVEL")));
                 s = s.replaceAll("%KEYFINDER_LEVEL%", String.valueOf(nbti.getInteger("KEYFINDER_LEVEL")));
+                s = s.replaceAll("%SPEED_LEVEL%", String.valueOf(nbti.getInteger("SPEED_LEVEL")));
 
                 lores.add(Util.msgColorCode(s));
             }
@@ -70,7 +71,7 @@ public class GUI {
 
             nbti = new NBTItem(itemComp);
             String enchantTypeInput = menuSection.getString(key + ".enchant-type");
-            String[] validEnchants = {"haste", "fortune", "token-finder", "key-finder"};
+            String[] validEnchants = {"haste", "fortune", "token-finder", "key-finder", "speed"};
             if (!(Arrays.asList(validEnchants).contains(enchantTypeInput.toLowerCase()))) {
                 Util.tellConsole(String.format("" +
                         "'%s' is not a valid input for enchant-type. Check documentation.", enchantTypeInput));
@@ -91,6 +92,7 @@ public class GUI {
         String fortuneLevel = String.valueOf(nbti.getInteger("FORTUNE_LEVEL"));
         String tokenLevel = String.valueOf(nbti.getInteger("TOKEN_LEVEL"));
         String keyFinderLevel = String.valueOf(nbti.getInteger("KEYFINDER_LEVEL"));
+        String speedLevel = String.valueOf(nbti.getInteger("SPEED_LEVEL"));
 
         ItemMeta meta = itemClicked.getItemMeta();
 
@@ -101,6 +103,7 @@ public class GUI {
             s = s.replace("%FORTUNE_LEVEL%", fortuneLevel);
             s = s.replace("%TOKEN_LEVEL%", tokenLevel);
             s = s.replace("%KEYFINDER_LEVEL%", keyFinderLevel);
+            s = s.replace("%SPEED_LEVEL%", speedLevel);
 
             lores.add(s);
         }

@@ -31,8 +31,6 @@ hoe-upgrade-menu:
     lore:
       - 'Click here to upgrade your Haste upgrade'
       - ''
-      - 'Cost: (not developed yet)'
-      - ''
       - 'Plugin by Spring93'
 
   2:
@@ -44,6 +42,20 @@ hoe-upgrade-menu:
     lore:
       - 'Click here to upgrade your Fortune upgrade'
       - ''
-      - 'Cost: (not developed yet)'
+      - 'Plugin by Spring93'
+  3:
+    item: "SANDSTONE"
+    enchant-type: "speed"
+    name: "Speed Upgrade"
+    slot: 7
+    glow-effect: FALSE
+    lore:
+      - 'Click here to upgrade your Speed upgrade'
       - ''
       - 'Plugin by Spring93'
+
+enchants:
+  haste:
+    max-level: 1
+  speed:
+    max-level: 1 # Increasing this will not do anything (only 1 level available for speed)

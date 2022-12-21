@@ -24,6 +24,7 @@ public class UpdateHoe {
         int fortuneLevel = nbti.getInteger("FORTUNE_LEVEL");
         int tokenLevel = nbti.getInteger("TOKEN_LEVEL");
         int keyFinderLevel = nbti.getInteger("KEYFINDER_LEVEL");
+        int speedLevel = nbti.getInteger("SPEED_LEVEL");
 
         switch(enchantUpgrade) {
             case "haste":
@@ -37,6 +38,9 @@ public class UpdateHoe {
                 break;
             case "key-finder":
                 keyFinderLevel += enchantIncrement;
+                break;
+            case "speed":
+                speedLevel += enchantIncrement;
                 break;
 
         }
@@ -52,6 +56,7 @@ public class UpdateHoe {
             s = s.replaceAll("%FORTUNE_LEVEL%", String.valueOf(fortuneLevel));
             s = s.replaceAll("%TOKEN_LEVEL%", String.valueOf(tokenLevel));
             s = s.replaceAll("%KEYFINDER_LEVEL%", String.valueOf(keyFinderLevel));
+            s = s.replaceAll("%SPEED_LEVEL%", String.valueOf(speedLevel));
 
             lores.add(Util.msgColorCode(s));
         }
@@ -65,6 +70,7 @@ public class UpdateHoe {
         nbti.setInteger("FORTUNE_LEVEL", fortuneLevel);
         nbti.setInteger("TOKEN_LEVEL", tokenLevel);
         nbti.setInteger("KEYFINDER_LEVEL", keyFinderLevel);
+        nbti.setInteger("SPEED_LEVEL", speedLevel);
 
         p.setItemInHand(nbti.getItem());
 

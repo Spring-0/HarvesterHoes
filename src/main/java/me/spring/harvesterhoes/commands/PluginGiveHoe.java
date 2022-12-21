@@ -51,6 +51,7 @@ public class PluginGiveHoe implements CommandExecutor {
                 s = s.replaceAll("%TOKEN_LEVEL%", "0");
                 s = s.replaceAll("%KEYFINDER_LEVEL%", "0");
                 s = s.replaceAll("%AUTOSELL%", "True");
+                s = s.replaceAll("%SPEED_LEVEL%", "0");
 
                 lores.add(Util.msgColorCode(s));
             }
@@ -68,9 +69,10 @@ public class PluginGiveHoe implements CommandExecutor {
 
             NBTItem nbti = new NBTItem(hoe);
             nbti.setInteger("HASTE_LEVEL", 0);
-            nbti.setInteger("FORTUNE_LEVEL", 0);
+            nbti.setInteger("FORTUNE_LEVEL", 1);
             nbti.setInteger("TOKEN_LEVEL", 0);
             nbti.setInteger("KEYFINDER_LEVEL", 0);
+            nbti.setInteger("SPEED_LEVEL", 0);
             nbti.setBoolean("isHarvHoe", Boolean.TRUE);
             nbti.setBoolean("autoSell", Boolean.FALSE);
 

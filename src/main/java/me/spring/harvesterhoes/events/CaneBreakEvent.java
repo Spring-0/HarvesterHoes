@@ -12,6 +12,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,6 +40,15 @@ public class CaneBreakEvent implements Listener {
         NBTItem nbti = new NBTItem(e.getPlayer().getItemInHand());
         if(nbti.getBoolean("isHarvHoe")) {
             if (block.getType() == Material.SUGAR_CANE_BLOCK) {
+
+                int level = nbti.getInteger("HASTE_LEVEL");
+                if(level > 0){
+                    Util.addEffect(e.getPlayer(), PotionEffectType.FAST_DIGGING, level-1);
+                }
+
+                int speedLevel = nbti.getInteger("SPEED_LEVEL");
+                if(speedLevel > 0){Util.addEffect(e.getPlayer(), PotionEffectType.SPEED, 10);}
+
                 int caneToGive = 0;
                 ArrayList<Block> canesBroken = new ArrayList<>();
                 while (block.getType() == Material.SUGAR_CANE_BLOCK) {
@@ -58,7 +69,7 @@ public class CaneBreakEvent implements Listener {
 
                     if (nbti.getBoolean("autoSell")) {
                         Economy econ = Harvesterhoes.getEconomy();
-                        EconomyResponse r = econ.depositPlayer(e.getPlayer(), caneToGive * PRICE_OF_CANE);
+                        EconomyResponse r = econ.depositPlayer(e.getPlayer(), caneToGive * PRICE_OF_CANE * nbti.getInteger("FORTUNE_LEVEL"));
                         if (!r.transactionSuccess()) {
                             e.getPlayer().sendMessage(r.errorMessage);
                             Util.tellConsole(String.format("%s encountered: ", r.errorMessage));
@@ -76,3 +87,4 @@ public class CaneBreakEvent implements Listener {
     }
 
 }
+
