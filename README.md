@@ -10,8 +10,3 @@ In development project that features upgradable Sugar Cane harvester hoes.
 
 * [NBT-API](https://www.spigotmc.org/resources/nbt-api.7939/)
 * [Vault](https://www.spigotmc.org/resources/vault.34315/)
-
-## Authors
-
-Spring93<br>
-Discord: Spring#9999
